@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class StudentService {
+
+  private apiUrl = 'https://localhost:7037/api/Students';
+
+  constructor(private http: HttpClient) {}
+
+  getStudents(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
+  }
+
+  addStudent(student: any): Observable<any> {
+    return this.http.post(this.apiUrl, student);
+  }
+
+  rollNumberExists(rollNumber: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/exists/${rollNumber}`);
+  }
+
+  // ✅ DELETE STUDENT (INSIDE CLASS)
+  deleteStudent(id: number): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+}

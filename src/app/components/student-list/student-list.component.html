@@ -1,0 +1,75 @@
+<h2>{{ isEditMode ? 'Edit Student' : 'Add Student' }}</h2>
+
+<form (ngSubmit)="addStudent()">
+  <input
+    type="text"
+    placeholder="Name"
+    [(ngModel)]="newStudent.name"
+    name="name"
+    required
+  /><br /><br />
+
+  <input
+    type="text"
+    placeholder="Roll Number"
+    [(ngModel)]="newStudent.rollNumber"
+    name="rollNumber"
+    required
+  /><br /><br />
+
+  <input
+    type="text"
+    placeholder="Department"
+    [(ngModel)]="newStudent.department"
+    name="department"
+  /><br /><br />
+
+  <input
+    type="email"
+    placeholder="Email"
+    [(ngModel)]="newStudent.email"
+    name="email"
+  /><br /><br />
+
+  <input
+    type="text"
+    placeholder="Phone"
+    [(ngModel)]="newStudent.phone"
+    name="phone"
+  /><br /><br />
+
+  <button type="submit">
+    {{ isEditMode ? 'Update Student' : 'Add Student' }}
+  </button>
+</form>
+
+<p style="color:red">{{ errorMessage }}</p>
+
+<hr />
+
+<h2>Student List</h2>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Roll Number</th>
+    <th>Department</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let s of students">
+    <td>{{ s.studentId }}</td>
+    <td>{{ s.name }}</td>
+    <td>{{ s.rollNumber }}</td>
+    <td>{{ s.department }}</td>
+    <td>{{ s.email }}</td>
+    <td>{{ s.phone }}</td>
+    <td>
+      <button (click)="editStudent(s)">Edit</button>
+      <button (click)="deleteStudent(s.studentId)">Delete</button>
+    </td>
+  </tr>
+</table>
