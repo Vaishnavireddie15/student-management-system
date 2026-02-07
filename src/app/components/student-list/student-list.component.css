@@ -1,0 +1,97 @@
+/* Page container */
+h2 {
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Form styling */
+form {
+  width: 350px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Buttons */
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Add / Update button */
+form button {
+  background-color: #007bff;
+  color: white;
+  margin-top: 5px;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Action buttons */
+td button {
+  margin-right: 5px;
+}
+
+/* Edit button */
+td button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+td button:first-child:hover {
+  background-color: #1e7e34;
+}
+
+/* Delete button */
+td button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+td button:last-child:hover {
+  background-color: #b02a37;
+}
+
+/* Error message */
+p {
+  margin-top: 10px;
+  font-weight: bold;
+}
